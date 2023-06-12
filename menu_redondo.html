@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de menu</title>
+    <style>
+        .principal
+        {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: lightgrey;
+            top:100px;
+            left: 0px;
+        }
+        .central
+        {
+            cursor: pointer;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: yellow;
+            top:75px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .op1
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: red;
+            top:15px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 0;
+        }
+        .op2
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: green;
+            top:75px;
+            right:15px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+        }
+        .op3
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: pink;
+            bottom:15px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 0;
+        }
+
+        .anima_op1
+        {
+           animation: recolher_op1 1s forwards;
+        }
+        @keyframes recolher_op1 {
+                0%{top:15px;left:75px;}
+                100%{top:75px;left:75px;}      
+        }
+        .mostrar_op1
+        {
+           animation: abrir_op1 1s forwards;
+        }
+        @keyframes abrir_op1 {
+            0%{top:75px;left:75px;} 
+            100%{top:15px;left:75px;}
+                     
+        }
+        
+        .anima_op2
+        {
+            animation: recolher_op2 1s forwards;
+        }
+        @keyframes recolher_op2 {
+                0%{top:75px;right:15px;}
+                100%{top:75px;right:75px;}      
+        }
+        
+        .mostrar_op2
+        {
+            animation: abrir_op2 1s forwards;
+        }
+        @keyframes abrir_op2 {
+            0%{right:75px;top:75px;} 
+            100%{right:15px;top:75px;}    
+        }
+
+        .anima_op3
+        {
+            animation: recolher_op3 1s forwards;
+        }
+        @keyframes recolher_op3 {
+                0%{bottom:15px;left:75px;}
+                100%{bottom:75px;left:75px;}      
+        }
+
+        .mostrar_op3
+        {
+            animation: abrir_op2 1s forwards;
+        }
+        @keyframes abrir_op2 {
+            0%{right:75px;top:75px;} 
+            100%{right:15px;top:75px;}    
+        }
+
+    </style>
+   
+</head>
+<body>
+    <div class="principal">
+        <div onclick="ExecutarMenu();" class="central">  </div>
+        <div class="op1" id="op1"> A </div>
+        <div class="op2" id="op2"> B </div>
+        <div class="op3" id="op3"> C </div>
+    </div>
+</body>
+
+<script>
+    cliques = false //cria uma variavel (boleana)
+    function ExecutarMenu()
+    {
+        cliques = !cliques; //inverte o valor da variavel//
+        if(cliques==true) //sendo a variavel verdadeira, ele inicia a animação//
+        {
+            op1.classList.add("anima_op1");
+            op2.classList.add("anima_op2");
+            op3.classList.add("anima_op3");
+
+            op1.classList.remove("mostrar_op1");//remove a classe de animação//
+        }
+        if(cliques==false){ // se a animação for falsa, ele verifica e inicia a animação//
+            op1.classList.add("mostrar_op1");
+            op2.classList.add("mostrar_op2");
+            op3.classList.add("mostrar_op3");
+
+            op1.classList.remove("anima_op1");//remove a classe de animação//
+           
+        }
+    }
+</script>
+</html>

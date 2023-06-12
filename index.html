@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smiling</title>
+    <link rel="stylesheet" href="pgninicial.css">
+    <link rel="shortcut icon" href="icone-da-pagina.png" type="image/x-icon">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="menu.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+    <style>
+        .principal
+        {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(140, 24, 24);
+            top: 400px;
+            left: 1350px;
+        }
+        .central
+        {
+            cursor: pointer;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: yellow;
+            top:75px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .op1
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: red;
+            top: 75px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 0;
+        }
+        .op2
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: green;
+            top:75px;
+            right: 75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+        }
+        .op3
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: pink;
+            bottom:75px;
+            left:75px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            z-index: 0;
+        }
+
+        .anima_op1
+        {
+           animation: recolher_op1 1s forwards;
+        }
+        @keyframes recolher_op1 {
+                0%{top:15px;left:75px;}
+                100%{top:75px;left:75px;}      
+        }
+        .mostrar_op1
+        {
+           animation: abrir_op1 1s forwards;
+        }
+        @keyframes abrir_op1 {
+            0%{top:75px;left:75px;} 
+            100%{top:15px;left:75px;}
+                     
+        }
+        
+        .anima_op2
+        {
+            animation: recolher_op2 1s forwards;
+        }
+        @keyframes recolher_op2 {
+                0%{top:75px;left:15px;}
+                100%{top:75px;left:75px;}      
+        }
+        
+        .mostrar_op2
+        {
+            animation: abrir_op2 1s forwards;
+        }
+        @keyframes abrir_op2 {
+            0%{left: 15px;top:75px;} 
+            100%{left: 1000px;top:1000px;}    
+        }
+
+        .anima_op3
+        {
+            animation: recolher_op3 1s forwards;
+        }
+        @keyframes recolher_op3 {
+                0%{bottom:15px;left:75px;}
+                100%{bottom:75px;left:75px;}      
+        }
+
+        .mostrar_op3
+        {
+            animation: abrir_op2 1s forwards;
+        }
+        @keyframes abrir_op2 {
+            0%{right:75px;top:75px;} 
+            100%{right:15px;top:75px;}    
+        }
+
+    </style>
+</head>
+ 
+ <body 
+
+ style="background-color: rgb(247, 212, 229);"   >
+    <div class="logo.p">
+        <img src="imagens/logo(2)(1).png" alt="">
+    </div>
+   
+   
+    <div class="backgroud">
+       
+        <header>
+
+ 
+            
+ 
+             </nav>
+            <center>
+                <img src="imagens/logo.png" alt="">
+            </center> 
+        </header>
+           
+        
+        <div class="principal">
+            <div onclick="ExecutarMenu();" class="central">  </div>
+            <a href="login.html"><div class="op1" id="op1" > A </div></a>
+            <a href="car.html"><div class="op2" id="op2"> B </div></a>
+            <a href="faleconosco.html"><div class="op3" id="op3"> C </div></a>
+        </div>
+    
+   
+        <div class="Meio">
+            <h1>CONHEÇA A MELHOR LOJA   
+            DE BRINQUEDOS DO BRASIL!</h1>
+            <P> Apenas vendas onlines</P>
+            <div>
+                <a href="car.html">
+                    <button>
+                        PRODUTOS
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+
+    <script>
+        cliques = false //cria uma variavel (boleana)
+        function ExecutarMenu()
+        {
+            cliques = !cliques; //inverte o valor da variavel//
+            if(cliques==true) //sendo a variavel verdadeira, ele inicia a animação//
+            {
+                op1.classList.add("mostrar_op1");
+                op2.classList.add("mostrar_op2");
+                op3.classList.add("mostar_op3");
+    
+                
+            }
+            if(cliques==false){ // se a animação for falsa, ele verifica e inicia a animação//
+                op1.classList.add("anima_op1");
+                op2.classList.add("anima_op2");
+                op3.classList.add("anima_op3");
+    
+              
+               
+            }
+        }
+    </script>
+
+</html>
+
